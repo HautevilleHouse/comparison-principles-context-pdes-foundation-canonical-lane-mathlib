@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.ComparisonPrinciplesContextPdesFoundationCanonicalLaneLean.ComparisonPrinciplesFoundation
+import HautevilleHouse.ComparisonPrinciplesContextPdesFoundationCanonicalLaneLean.ParabolicComparison
+import HautevilleHouse.ComparisonPrinciplesContextPdesFoundationCanonicalLaneLean.EllipticComparison
+import HautevilleHouse.ComparisonPrinciplesContextPdesFoundationCanonicalLaneLean.BarrierFunctions
+
+namespace HautevilleHouse
+namespace ComparisonPrinciplesContextPdesFoundationCanonicalLaneLean
+
+def ConstrainedComparisonClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_comparison_endgame (A : AdmissibleClass) :
+    ConstrainedComparisonClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ComparisonPrinciplesContextPdesFoundationCanonicalLaneLean
+end HautevilleHouse
